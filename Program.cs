@@ -3,12 +3,12 @@ Console.WriteLine("Заполните массив строк для обраб�
 string input = Console.ReadLine();
 if (input.Length == 0) Console.WriteLine("Вы не ввели ни одного элемента массива. Программа завершена.");
 else {
-    string processingArray = "";
+    string processingString = "";
     while (input.Length > 0) {
-        processingArray = processingArray + input + "\n";
+        processingString = processingString + input + "\n";
         input = Console.ReadLine();
     }
-    PrintArray(RemoveUnnecessaryStrings(BuildArrayFromInput(processingArray)));
+    PrintArray(RemoveUnnecessaryStrings(BuildArrayFromInput(processingString)));
 }
 
 string[] BuildArrayFromInput (string inputToProcess){
@@ -16,11 +16,11 @@ string[] BuildArrayFromInput (string inputToProcess){
 }
 
 string[] RemoveUnnecessaryStrings(string[] arrayToProcess){
-    string processingArray = "";
+    string processingString = "";
     for (int i=0; i < arrayToProcess.Length; i++){
-        if (arrayToProcess[i].Length < 4) processingArray = processingArray + arrayToProcess[i] + "\n";
+        if (arrayToProcess[i].Length < 4) processingString = processingString + arrayToProcess[i] + "\n";
     }
-    return processingArray.Split("\n",StringSplitOptions.RemoveEmptyEntries);
+    return processingString.Split("\n",StringSplitOptions.RemoveEmptyEntries);
 }
 
 void PrintArray(string[] arrayToPrint){
